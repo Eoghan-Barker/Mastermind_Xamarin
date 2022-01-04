@@ -1,2 +1,2 @@
 # Mastermind_Xamarin
-mastermind board game with Xamarin fourms and c++
+mastermind board game with Xamarin fourms and c#
