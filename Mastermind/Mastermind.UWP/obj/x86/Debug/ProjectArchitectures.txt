@@ -1,0 +1,1 @@
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind.UWP\Mastermind.UWP.csproj;x86

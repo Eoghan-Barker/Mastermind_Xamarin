@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mastermind.MainPage">
+    <!-- Stack layout for board-->
+    <StackLayout Margin="175, 50, 175, 50" Padding="50, 50, 50, 50" BackgroundColor="RosyBrown" HorizontalOptions="Center">
+        <!-- StackLayout for hidden pieces-->
+        <StackLayout BackgroundColor="Red" Padding="25, 0, 25, 25">
+            <Label HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown" Text="?  ?  ?  ?" Padding="200, 25, 200, 25" CharacterSpacing="5"/>
+        </StackLayout>
+        <!-- StackLayout for play area-->
+        <StackLayout BackgroundColor="Green" Orientation="Horizontal" HorizontalOptions="Center">
+            
+            <!--Feedback area-->
+            <StackLayout>
+                <Grid x:Name="GrdFeedback" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" 
+                      HeightRequest="500" WidthRequest="100" BackgroundColor="Orange" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--horizontal lines to divide rounds-->
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                </Grid>
+            </StackLayout>
+            
+            <!--Guess area-->
+            <StackLayout>
+                <Grid x:Name="GrdGuessing" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" HeightRequest="500" WidthRequest="500" BackgroundColor="Purple">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </StackLayout>
+            <!--Rounds-->
+            <StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+        <!-- StackLayout for colour choices-->
+        <StackLayout BackgroundColor="Yellow">
+            <Label HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown" Text="?  ?  ?  ?" Padding="200, 25, 200, 25" CharacterSpacing="5"/>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

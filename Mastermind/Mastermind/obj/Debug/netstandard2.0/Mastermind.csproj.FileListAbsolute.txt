@@ -1,0 +1,15 @@
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\bin\Debug\netstandard2.0\Mastermind.deps.json
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\bin\Debug\netstandard2.0\Mastermind.dll
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\bin\Debug\netstandard2.0\ref\Mastermind.dll
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\bin\Debug\netstandard2.0\Mastermind.pdb
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\Mastermind.csproj.AssemblyReference.cache
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\Mastermind.GeneratedMSBuildEditorConfig.editorconfig
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\App.xaml.g.cs
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\Mastermind.AssemblyInfoInputs.cache
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\Mastermind.AssemblyInfo.cs
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\Mastermind.csproj.CoreCompileInputs.cache
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\XamlC.stamp
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\Mastermind.dll
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\ref\Mastermind.dll
+F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\obj\Debug\netstandard2.0\Mastermind.pdb
