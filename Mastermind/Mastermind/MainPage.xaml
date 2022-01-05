@@ -6,7 +6,17 @@
     <StackLayout Margin="175, 50, 175, 50" Padding="50, 50, 50, 50" BackgroundColor="RosyBrown" HorizontalOptions="Center">
         <!-- StackLayout for hidden pieces-->
         <StackLayout BackgroundColor="Red" Padding="25, 0, 25, 25">
-            <Label HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown" Text="?  ?  ?  ?" Padding="200, 25, 200, 25" CharacterSpacing="5"/>
+            <Grid x:Name="GrdSolution" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown"  Padding="200, 25, 200, 25">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
         </StackLayout>
         <!-- StackLayout for play area-->
         <StackLayout BackgroundColor="Green" Orientation="Horizontal" HorizontalOptions="Center">
@@ -14,7 +24,7 @@
             <!--Feedback area-->
             <StackLayout>
                 <Grid x:Name="GrdFeedback" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" 
-                      HeightRequest="500" WidthRequest="100" BackgroundColor="Orange" >
+                      HeightRequest="500" WidthRequest="75" BackgroundColor="Orange" >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -56,18 +66,8 @@
             
             <!--Guess area-->
             <StackLayout>
-                <Grid x:Name="GrdGuessing" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" HeightRequest="500" WidthRequest="500" BackgroundColor="Purple">
+                <Grid x:Name="GrdGuessing" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" HeightRequest="500" WidthRequest="300" BackgroundColor="Purple">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -82,7 +82,19 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    <!--horizontal lines to divide rounds-->
+                    <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+                    <BoxView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Red" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
                 </Grid>
             </StackLayout>
             <!--Rounds-->
@@ -92,7 +104,18 @@
         </StackLayout>
         <!-- StackLayout for colour choices-->
         <StackLayout BackgroundColor="Yellow">
-            <Label HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown" Text="?  ?  ?  ?" Padding="200, 25, 200, 25" CharacterSpacing="5"/>
+            <Grid x:Name="GrdChoices" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown"  Padding="200, 25, 200, 25">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
         </StackLayout>
     </StackLayout>
     
