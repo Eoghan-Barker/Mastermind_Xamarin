@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mastermind.MainPage">
     <!-- Stack layout for board-->
-    <StackLayout Margin="175, 50, 175, 50" Padding="50, 50, 50, 50" BackgroundColor="RosyBrown" HorizontalOptions="Center">
+    <StackLayout Margin="175, 50, 175, 50" Padding="25, 25, 25, 25" BackgroundColor="RosyBrown" HorizontalOptions="Center">
+        <Label x:Name="LblTesting" Text="---"/>
         <!-- StackLayout for hidden pieces-->
-        <StackLayout BackgroundColor="Red" Padding="25, 0, 25, 25">
-            <Grid x:Name="GrdSolution" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown"  Padding="200, 25, 200, 25">
+        <StackLayout>
+            <Grid x:Name="GrdSolution" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown"  HeightRequest="75" WidthRequest="400">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
@@ -19,12 +20,12 @@
             </Grid>
         </StackLayout>
         <!-- StackLayout for play area-->
-        <StackLayout BackgroundColor="Green" Orientation="Horizontal" HorizontalOptions="Center">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             
             <!--Feedback area-->
             <StackLayout>
                 <Grid x:Name="GrdFeedback" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" 
-                      HeightRequest="500" WidthRequest="75" BackgroundColor="Orange" >
+                      HeightRequest="500" WidthRequest="75" BackgroundColor="SaddleBrown" >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -66,7 +67,7 @@
             
             <!--Guess area-->
             <StackLayout>
-                <Grid x:Name="GrdGuessing" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" HeightRequest="500" WidthRequest="300" BackgroundColor="Purple">
+                <Grid x:Name="GrdGuessing" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="0" ColumnSpacing="0" HeightRequest="500" WidthRequest="300" BackgroundColor="SaddleBrown">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -103,8 +104,8 @@
             </StackLayout>
         </StackLayout>
         <!-- StackLayout for colour choices-->
-        <StackLayout BackgroundColor="Yellow">
-            <Grid x:Name="GrdChoices" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown"  Padding="200, 25, 200, 25">
+        <StackLayout>
+            <Grid x:Name="GrdChoices" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown"  HeightRequest="100" WidthRequest="400">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -116,6 +117,14 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
             </Grid>
+        </StackLayout>
+        <!--StackLayout for buttons-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button x:Name="Check" Text="Check" BackgroundColor="AntiqueWhite" Clicked="Check_Clicked"/>
+            <Button x:Name="Reset" Text="Reset" BackgroundColor="AntiqueWhite" Clicked="Reset_Clicked"/>
+            <Button x:Name="Save" Text="Save" BackgroundColor="AntiqueWhite" Clicked="Save_Clicked"/>
+            <Button x:Name="Load" Text="Load" BackgroundColor="AntiqueWhite" Clicked="Load_Clicked"/>
+            
         </StackLayout>
     </StackLayout>
     
