@@ -116,7 +116,7 @@ namespace Mastermind
                     b.SetValue(Grid.ColumnProperty, c);
                     b.GestureRecognizers.Add(t);
                     g.Children.Add(b);
-                    counter++;    
+                    counter++;
                 }
             }
         }
@@ -126,9 +126,12 @@ namespace Mastermind
             BoxView b = (BoxView)sender;
 
             // make sure colour has been selected and is being placed in correct row
-            if(_currColourSelected == null || (int)b.GetValue(Grid.RowProperty) != _roundCounter)
+            if(_currColourSelected == null)
             {
-                LblTesting.Text = "empty";
+                DisplayAlert("Alert", "Please choose a colour", "OK");
+            }
+            else if((int)b.GetValue(Grid.RowProperty) != _roundCounter){
+                DisplayAlert("Alert", "Place the piece in the correct row", "OK");
             }
             else
             {
@@ -141,46 +144,30 @@ namespace Mastermind
         private void Choice_Tapped(object sender, EventArgs e)
         {
             _currColourSelected = (BoxView)sender;
-            LblTesting.Text = "full";
         }
 
         private void GenerateSolution()
         {
-            int num, i;
+            int i;
             Random random = new Random();
+            List<string> colours = new List<string>(8);
+
+            //populate list
+            colours.Add("red");
+            colours.Add("green");
+            colours.Add("blue");
+            colours.Add("yellow");
+            colours.Add("brown");
+            colours.Add("orange");
+            colours.Add("black");
+            colours.Add("white");
+
+            // random sort list
+            colours = colours.OrderBy(x => random.Next()).ToList();
 
             for (i = 0; i < 4; i++)
             {
-                _solutionColours[i] = "red";
-                
-                num = random.Next(8);
-                switch (num)
-                {
-                    case 0:
-                        _solutionColours[i] = "red";
-                        break;
-                    case 1:
-                        _solutionColours[i] = "green";
-                        break;
-                    case 2:
-                        _solutionColours[i] = "blue";
-                        break;
-                    case 3:
-                        _solutionColours[i] = "yellow";
-                        break;
-                    case 4:
-                        _solutionColours[i] = "brown";
-                        break;
-                    case 5:
-                        _solutionColours[i] = "orange";
-                        break;
-                    case 6:
-                        _solutionColours[i] = "black";
-                        break;
-                    case 7:
-                        _solutionColours[i] = "white";
-                        break;
-                }
+                _solutionColours[i] = colours.ElementAt(i);
             }
         }
 
@@ -190,6 +177,9 @@ namespace Mastermind
             String[] guessArr = new string[4];
             int i, r = 0, reds = 0, whites = 0;
 
+
+
+            //ElemetAt starts at 9 and ends at 48 on both grids so _boxViewFinder starts at 48 and goes down by 4 each time user moves to a new row
             // get the 4 styleIds from current row
             for (i = 0; i < 4; i++)
             {
@@ -202,32 +192,22 @@ namespace Mastermind
                 feedbackPins[i] = (BoxView)GrdFeedback.Children.ElementAt(i + _boxViewFinder);
             }
 
-            //check for red pins
+            
             for (i = 0; i < 4; i++)
             {
+                //check for red pins
                 if (guessArr[i] == _solutionColours[i])
                 {
                     reds++;
                 }
+                //check for white pins
+                else if (guessArr[i] == _solutionColours[1] || guessArr[i] == _solutionColours[2] || guessArr[i] == _solutionColours[3] || guessArr[i] == _solutionColours[0])
+                {
+                    whites++;
+                }
             }
 
-            //check for white pins
-            if (guessArr[0] == _solutionColours[1] || guessArr[0] == _solutionColours[2] || guessArr[0] == _solutionColours[3])
-            {
-                whites++;
-            }
-            else if (guessArr[1] == _solutionColours[0] || guessArr[1] == _solutionColours[2] || guessArr[1] == _solutionColours[3])
-            {
-                whites++;
-            }
-            else if (guessArr[2] == _solutionColours[1] || guessArr[2] == _solutionColours[0] || guessArr[2] == _solutionColours[3])
-            {
-                whites++;
-            }
-            else if (guessArr[3] == _solutionColours[1] || guessArr[3] == _solutionColours[2] || guessArr[3] == _solutionColours[0])
-            {
-                whites++;
-            }
+           
 
             // reset pins
             for (i = 0; i < 4; i++)
@@ -247,13 +227,16 @@ namespace Mastermind
                 r++;
             }
 
-            // check for game win
+            // check for game win or loss
             if (reds == 4)
             {
                 GameWon();
             }
+            else if (_roundCounter == 0)
+            {
+                GameLost();
+            }
 
-           
             _boxViewFinder -= 4;
             _roundCounter--;
         }
@@ -276,8 +259,58 @@ namespace Mastermind
         private void GameWon()
         {
             //display pop up "You won"
+            DisplayAlert("You Win", "Congratulations!", "OK");
 
             //colour in the 4 "hidden" circles
+            revealSolution();
+        }
+
+        private void GameLost()
+        {  
+            DisplayAlert("You Loose", "Better luck next time", "OK");
+
+            revealSolution();
+        }
+
+        private void revealSolution()
+        {
+            int i;
+
+            Color color = Color.Red;
+
+            for (i = 0; i < 4; i++)
+            {
+                switch (_solutionColours[i])
+                {
+                    case "red":
+                        color = Color.Red;
+                        break;
+                    case "green":
+                        color = Color.Green;
+                        break;
+                    case "blue":
+                        color = Color.Blue;
+                        break;
+                    case "yellow":
+                        color = Color.Yellow;
+                        break;
+                    case "brown":
+                        color = Color.Brown;
+                        break;
+                    case "orange":
+                        color = Color.Orange;
+                        break;
+                    case "black":
+                        color = Color.Black;
+                        break;
+                    case "white":
+                        color = Color.White;
+                        break;
+                }
+
+                GrdSolution.Children.ElementAt(i).BackgroundColor = color;
+            }
+
         }
     }
 }

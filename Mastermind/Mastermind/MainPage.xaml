@@ -4,7 +4,6 @@
              x:Class="Mastermind.MainPage">
     <!-- Stack layout for board-->
     <StackLayout Margin="175, 50, 175, 50" Padding="25, 25, 25, 25" BackgroundColor="RosyBrown" HorizontalOptions="Center">
-        <Label x:Name="LblTesting" Text="---"/>
         <!-- StackLayout for hidden pieces-->
         <StackLayout>
             <Grid x:Name="GrdSolution" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="SaddleBrown"  HeightRequest="75" WidthRequest="400">
