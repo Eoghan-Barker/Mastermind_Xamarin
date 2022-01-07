@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\GitHub\Mastermind_Xamarin\Mastermind\Mastermind\bin\Debug\netstandard2.0\Mastermind.dll">
       <PackagePath>Mastermind.dll</PackagePath>
-      <Modified>2022-01-06T19:02:19.005</Modified>
+      <Modified>2022-01-07T11:40:39.851</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\eogha\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>

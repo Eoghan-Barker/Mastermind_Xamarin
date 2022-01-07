@@ -243,6 +243,28 @@ namespace Mastermind
 
         private void Reset_Clicked(object sender, EventArgs e)
         {
+            int i;
+
+            //reset hidden boxviews + generate new solution
+            for (i = 0; i < 4; i++)
+            {
+               GrdSolution.Children.ElementAt(i).BackgroundColor = Color.Black;
+            }
+            GenerateSolution();
+
+            //reset gameplay + feedback boxviews
+            for (i = 9; i < 49; i++)
+            {
+                GrdGuessing.Children.ElementAt(i).BackgroundColor = Color.SandyBrown;
+                GrdGuessing.Children.ElementAt(i).StyleId = "blank";
+                GrdFeedback.Children.ElementAt(i).BackgroundColor = Color.SandyBrown;
+            }
+
+            //reset global variables
+            _roundCounter = 9;
+            _boxViewFinder = 45;
+
+            _currColourSelected = null;
 
         }
 
